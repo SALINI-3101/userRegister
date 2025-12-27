@@ -5,6 +5,13 @@
   # Publish directory for Vite (NOT .next - that's for Next.js)
   publish = "dist"
 
+  # Ignore Next.js detection - this is a Vite React app
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
+
+# Environment variables
+[build.environment]
+  NODE_VERSION = "18"
+
 # Redirect all routes to index.html for client-side routing
 [[redirects]]
   from = "/*"
